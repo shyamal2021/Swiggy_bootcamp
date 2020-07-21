@@ -6,15 +6,6 @@ import (
 	"os"
 )
 
-//1. Write a program which has the
-//struct Emp -> empid, empname, salary, address
-//type Address struct { hno, street, city, pin }
-//Accept the values from the end-user, for initial 5 employees, you should give an option for use to quit in between Q (if Condition)
-//then display the details
-//
-//There is a need for contracting to eat, sleep, breath -> interface called Animal
-//If the user enters more than 5 employees then the size of the slice should be +5
-
 type Animal interface {
 	eat() string
 	sleep() int
@@ -26,7 +17,7 @@ func (e Emp) eat() string {
 }
 
 func (e Emp) sleep() int {
-	return 8
+	return 6
 }
 
 func (e Emp) breath() string {
@@ -95,12 +86,13 @@ func main(){
 	}
 
 	for i=0;i<len(emps);i++ {
+
 		fmt.Println("Empid = ",emps[i].empid,"Empname = ",emps[i].empname,"Salary = ",emps[i].salary)
-		fmt.Println("House Number = ",emps[i].address.hno,"Street name = ",emps[i].address.street,"City Name = ",emps[i].address.city)
-		fmt.Println("Pin Number = ",emps[i].address.pin)
-		fmt.Println("Eating Habit : ",emps[i].eat())
-		fmt.Println("Avg sleeping Duration : ",emps[i].sleep())
-		fmt.Println("Breathing Process : ",emps[i].breath())
+
+		fmt.Println("House Number = ",emps[i].address.hno,"Street name = ",emps[i].address.street,"City Name = ",emps[i].address.city,"Pin Number = ",emps[i].address.pin)
+
+		fmt.Println("Eating Habit : ",emps[i].eat(),"\nAvg sleeping Duration : ",emps[i].sleep(),"\nBreathing Process : ",emps[i].breath())
+
 	}
 
 }

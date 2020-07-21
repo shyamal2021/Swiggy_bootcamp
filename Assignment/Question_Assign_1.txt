@@ -1,0 +1,9 @@
+
+Write a program which has the
+struct Emp -> empid, empname, salary, address
+type Address struct { hno, street, city, pin }
+Accept the values from the end-user, for initial 5 employees, you should give an option for use to quit in between Q (if Condition)
+then display the details
+
+There is a need for contracting to eat, sleep, breath -> interface called Animal
+If the user enters more than 5 employees then the size of the slice should be +5
