@@ -32,6 +32,12 @@ func main(){
 	sort.Ints(ints)
 	fmt.Println(ints)
 
+	//one way to descend order
+	sort.Slice(ints, func(i, j int) bool {
+						return ints[i] > ints[j]
+					  })
+	fmt.Println(ints)
+
 	//Descending order
 	sort.Sort(sort.Reverse(sort.IntSlice(ints)))
 	fmt.Println(ints)
