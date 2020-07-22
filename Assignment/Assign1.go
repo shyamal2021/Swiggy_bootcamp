@@ -42,11 +42,13 @@ type Address struct {
 
 func main(){
 	reader := bufio.NewReader(os.Stdin)
-	emps := []*Emp{}
+	//emps := []*Emp{}
+	emps := make([]*Emp,0,5)
 	i:=0
 
 	for {
-		emp := new(Emp)
+		//emp := new(Emp)
+		emp := &Emp{}
 
 			fmt.Println("Enter Empid")
 			emp.empid ,_ = reader.ReadString('\n')
@@ -57,7 +59,7 @@ func main(){
 			fmt.Println("Enter Employee Salary")
 			fmt.Scan(&emp.salary)
 
-		adr := new(Address)
+		adr := &Address{}
 
 			fmt.Println("Enter house number")
 			adr.hno ,_ = reader.ReadString('\n')
@@ -75,6 +77,11 @@ func main(){
 		emp.address = adr
 
 		emps = append(emps,emp)
+		//if(i%5 == 0){
+		//	emps = append(emps,emp)
+		//} else {
+		//	emps[i] = emp
+		//}
 
 		fmt.Println("To enter more emplyees : (0/1) ")
 		response := 0
